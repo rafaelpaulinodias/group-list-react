@@ -1,0 +1,21 @@
+.mat-button {
+    display: flex;
+    color: var(--primary-color);
+    margin: 3px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    border: 1px solid var(--primary-color);
+    outline: none;
+    padding: 5px;
+}
+
+.mat-button:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.mat-button:active {
+    background-color: var(--active-color);
+}
