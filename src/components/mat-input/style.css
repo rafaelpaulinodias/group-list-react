@@ -1,0 +1,69 @@
+.material-input {
+    margin-top: 10px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    margin: 3px;
+}
+  
+.material-input > label {
+    position: absolute;
+    font-size: 1rem;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--background-color);
+    color: gray;
+    padding: 0 0.3rem;
+    margin: 0 0.5rem;
+    transition: .1s ease-out;
+    transform-origin: left top;
+    pointer-events: none;
+}
+
+.material-input > input {
+    display: flex;
+    width: 100%;
+    font-size: 1rem;
+    outline: none;
+    height: 10px;
+    border: 2px solid gray;
+    border-radius: 5px;  
+    padding: 1rem 0.7rem;
+    color: var(--text-color);
+    transition: 0.1s ease-out;
+    background-color: transparent;
+}
+
+.material-input > input:focus {
+    border-color: var(--primary-color);  
+}
+
+.material-input > input:focus + label {
+    color: var(--primary-color);
+    top: 0;
+    transform: translateY(-50%) scale(.9);
+}
+
+.material-input > input:not(:placeholder-shown) + label {
+    top: 0;
+    transform: translateY(-50%) scale(.9);
+}
+
+.material-input > i {
+    position: absolute;
+    color: gray;
+    top: 25%;
+    right: 10px;
+    user-select: none;
+    cursor: pointer !important;
+}
+
+.material-input > i:hover {
+    color: darkgrey;
+    cursor: pointer;
+}
+
+.material-input > i:active {
+    background-color: transparent;
+}

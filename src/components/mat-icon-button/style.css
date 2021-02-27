@@ -1,0 +1,29 @@
+.mat-icon-button {
+    margin: 0px;
+}
+.mat-icon-button > button {
+    display: flex;
+    width: auto;
+    height: 36px;
+    align-items: center;
+    border-radius: 18px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    user-select: none;
+}
+
+.mat-icon-button > button:hover, button:focus {
+    background-color: lightgray;
+    border: none;
+}
+
+.mat-icon-button > button:active {
+    background-color: #e3e3e3;
+    color: gray;
+}
+
+.mat-icon-button > button > .material-icons, .material-icons-outlined {
+    color: var(--text-color);
+}
