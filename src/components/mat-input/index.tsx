@@ -6,15 +6,14 @@ export interface MatImputProps {
     name?: string,
     password?: boolean,
     class?: string,
+    value?: string,
+    onChange?: any,
     toggleShowPassword?: boolean
 }
  
 const MatImput: React.FC<MatImputProps> = (props) => {
 
     const [showPassword, setShowPassword] = useState(props.password ? false : true);
-    const [inputValue, setInputValue] = useState('');
-
-    const chage = (event: React.ChangeEvent<HTMLInputElement>) => setInputValue(event.target.value);
 
     const toggleShowPassword = () => setShowPassword(!showPassword);
    
@@ -23,9 +22,9 @@ const MatImput: React.FC<MatImputProps> = (props) => {
             <input
                 type={showPassword ? 'text' : 'password'}
                 placeholder=" "
-                onChange={chage.bind(this)}
+                onChange={props.onChange}
                 name={props.name}
-                value={inputValue}
+                value={props.value}
             />
             <label>{props.label}</label>
             {props.toggleShowPassword && props.password && <i

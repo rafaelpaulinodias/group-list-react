@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './style.css'
 
-const MatListItem: React.FC = (props) => {
+export interface MatImputProps {
+    select? : boolean,
+}
+
+const MatListItem: React.FC<MatImputProps> = (props) => {
 
     return (
-        <div className="mat-list-item">{props.children}</div>
+        <div 
+            className={props.select ? "mat-list-item select" : "mat-list-item"}
+        >
+            {props.children}
+        </div>
     );
     
 }
