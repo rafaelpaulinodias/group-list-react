@@ -1,17 +1,45 @@
-header {
+.market-list > header {
     display: flex;
+    height: 40px;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.market-list > header > h1 {
+    font-weight: normal;
+    font-size: 12pt;
+    text-align: start;
+    margin: 10px;
+}
+
+.market-list > header > span {
+    padding: 2px;
+}
+
+.market-list > fieldset {
+    width: 100%;
+    border: none;
+    padding: 0;
+    display: flex;
+    margin: 0;
     justify-content: space-between;
 }
 
-header > h1 {
-    font-size: 12pt;
-    width: 100%;
-    text-align: start;
-    margin-left: 10px;
+.market-list > fieldset > div {
+    margin-right: 3px;
 }
 
-header > span {
-    padding: 2px;
+.market-list > fieldset > .name {
+    width: 100%;
+}
+
+.market-list > fieldset > .amount {
+    width: 100px;
+    text-align: center;
+}
+
+.market-list > fieldset > .price {
+    width: 140px;
 }
 
 .list-item-container {
