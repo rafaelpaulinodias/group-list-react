@@ -2,3 +2,11 @@
     padding: 5px;
     border-bottom: solid 1px #aaa;
 }
+
+.mat-list-item:hover {
+    background-color: var(--list-hover-color);
+}
+
+.mat-list-item.select {
+    background-color: var(--list-focus-color);
+}

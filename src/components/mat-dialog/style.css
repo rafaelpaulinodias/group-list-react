@@ -1,0 +1,65 @@
+.dialog-container {
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    margin: 0;
+    z-index: 1020;
+    background-color: rgba(50, 50, 50, 0.5);
+}
+
+.dialog {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-color);
+    width: 500px;
+    height: fit-content;
+    margin: 100px 10px;
+    border: 1px solid #bbb;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    justify-content: space-between;
+}
+
+.dialog > header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 30px;
+    justify-content: space-between;
+    padding: 5px 10px;
+}
+
+.dialog > header > h4 {
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.dialog > header > i {
+    color: var(--text-color);
+    cursor: default;
+    user-select: none;
+}
+
+.dialog > header > i:hover {
+    color: var(--primary-color);
+}
+
+.dialog > section {
+    font-size: 14pt;
+    padding: 10px;
+}
+
+.dialog > footer {
+    display: flex;
+    flex-direction: row-reverse;
+    height: 30px;
+    padding: 15px;
+}
+
+.hide {
+    display: none;
+}

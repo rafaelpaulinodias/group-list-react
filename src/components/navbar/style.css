@@ -1,0 +1,24 @@
+section {
+    display: flex;
+    align-items: center;
+}
+
+.nav-brand {
+    display: flex;
+    margin: 0px 10px;
+    color: var(--navbar-text-color);
+    font-size: 18pt;
+    font-weight: bolder;
+    text-decoration: none;
+    align-items: center;
+    text-shadow: -1px 1px 0 coral, 1px 1px 0 coral, 1px -1px 0 coral, -1px -1px 0 coral;
+}
+
+.nav-button {
+    display: flex;
+    margin: 0px 10px;
+    font-size: 18pt;
+    color:var(--navbar-text-color);
+    text-decoration: none;
+    align-items: center;
+}

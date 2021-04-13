@@ -6,7 +6,7 @@ export interface DialogProps {
     close?: any,
 }
 
-const Dialog: React.FC<DialogProps> = (props) => {
+const MatDialog: React.FC<DialogProps> = (props) => {
     
     return(
         <>
@@ -20,4 +20,4 @@ const Dialog: React.FC<DialogProps> = (props) => {
     
 }
  
-export default Dialog;
+export default MatDialog;
