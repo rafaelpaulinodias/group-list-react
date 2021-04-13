@@ -2,9 +2,20 @@
   --primary-color: #BF360C;
   --hover-color:  #DD2C00;
   --active-color: #FF7043;
-  --background-color: #ECEFF1;
+  --background-color: #fafafa;
   --text-color: #263238;
+  --text-focus-color: #ECEFF1;
   --navbar-text-color: #ECEFF1;
   --login-background-color: #9E9E9E;
   --shadow-logo-color: #F4511E;
+  --list-hover-color: #ccc;
+  --list-focus-color: #9E9E9E;
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: var(--background-color);
 }
