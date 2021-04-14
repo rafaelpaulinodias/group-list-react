@@ -1,3 +1,6 @@
+.market-list {
+    height: 100%;
+}
 .market-list > header {
     display: flex;
     height: 40px;
@@ -67,4 +70,25 @@
 
 .item-total {
     font-size: 8pt;
+}
+
+.market-list > footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.market-list > footer > div {
+    display: flex;
+    align-items: center;
+}
+
+.market-list > footer > .total-in-cart {
+    margin-left: 10px;
+}
+
+.market-list > footer > .total {
+    margin-right: 5px;
+    text-align: right;
 }

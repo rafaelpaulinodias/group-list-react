@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ClickNHold from 'react-click-n-hold';
+import MatIcon from '../../components/mat-icon';
 import MatIconButton from '../../components/mat-icon-button';
 import MatImput from '../../components/mat-input';
 import MatList from '../../components/mat-list';
@@ -54,8 +55,6 @@ const ShowList: React.FC = () => {
         setList(list);
     }
 
-    
-
     const Items = list.items.map((item) => 
         <MatListItem
         key={list.items.indexOf(item)}
@@ -72,14 +71,20 @@ const ShowList: React.FC = () => {
                     <div className="item-amout">{item.amount}</div>
 
                     <div className="item-totals">
-                        <div className="item-price">R$ {item.price}</div>
-                        <div className="item-total">Total: R$ {item.total}</div>
+                        <div className="item-price">R$ {item.price.toFixed(2)}</div>
+                        <div className="item-total">Total: R$ {item.total.toFixed(2)}</div>
                     </div>
                 </div>
 
             </ClickNHold>
         </MatListItem>
     );
+
+    const Footer = 
+        <>
+            <div className="total-in-cart"><MatIcon icon="shopping_cart" outlined/>R$ {list.totalInCart.toFixed(2)}</div>
+            <div className="total">Total: R$ {list.total.toFixed(2)}</div>
+        </>
 
     return (
     <section className="market-list">
@@ -112,6 +117,10 @@ const ShowList: React.FC = () => {
         <MatList>
             {Items}
         </MatList>
+
+        <footer>
+            {Footer}
+        </footer>
 
     </section>
     );
