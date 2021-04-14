@@ -19,10 +19,6 @@ const ShowList: React.FC = () => {
     const [selectedItem, setSelectedItem] = useState(new Item());
 
     const [hasSelectedItem, setHasSelectedItem] = useState(false);
-
-    const [inputItemName, setInputItemName] = useState('');
-    const [inputItemAmount, setInputItemAmount] = useState('0');
-    const [inputItemPrice, setInputItemPrice] = useState('0');
     
     const [list, setList] = useState(newList);
 
@@ -57,10 +53,6 @@ const ShowList: React.FC = () => {
         setHasSelectedItem(false);
         setList(list);
     }
-
-    const chageInputName = (event: React.ChangeEvent<HTMLInputElement>) => setInputItemName(event.target.value);
-    const chageInputAmount = (event: React.ChangeEvent<HTMLInputElement>) => setInputItemAmount(event.target.value);
-    const chageInputPrice = (event: React.ChangeEvent<HTMLInputElement>) => setInputItemPrice(event.target.value);
 
     const Items = list.items.map((item) =>
         <MatListItem
