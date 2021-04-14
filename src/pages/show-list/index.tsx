@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import ClickNHold from 'react-click-n-hold';
 import MatIconButton from '../../components/mat-icon-button';
-import MatButton from '../../components/mat-button';
-import MatDialog from '../../components/mat-dialog';
 import MatImput from '../../components/mat-input';
 import MatList from '../../components/mat-list';
 import MatListItem from '../../components/mat-list/mat-list-item';
@@ -24,6 +22,21 @@ const ShowList: React.FC = () => {
     
     const [list, setList] = useState(newList);
 
+    const chageInputName = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const item = new Item(event.target.value, selectedItem.amount, selectedItem.price)
+        setSelectedItem(item);
+    };
+
+    const chageInputAmount = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const item = new Item(selectedItem.name, parseFloat(event.target.value) , selectedItem.price)
+        setSelectedItem(item);
+    };
+
+    const chageInputPrice = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const item = new Item(selectedItem.name, selectedItem.amount, parseFloat(event.target.value))
+        setSelectedItem(item);
+    };
+
     const onListItemClick = () => {
         setHasSelectedItem(false);
         setSelectedItem(new Item())
@@ -44,11 +57,11 @@ const ShowList: React.FC = () => {
     
 
     const Items = list.items.map((item) => 
-        <ClickNHold time={1} onClickNHold={()=>onListItemClickAndHold(item)} >
-            <MatListItem
-                key={list.items.indexOf(item)}
-                select={hasSelectedItem && (selectedItem.name === item.name)}>
-                
+        <MatListItem
+        key={list.items.indexOf(item)}
+        select={hasSelectedItem && (selectedItem.name === item.name)}>
+            <ClickNHold time={1} onClickNHold={()=>onListItemClickAndHold(item)} >
+            
                 <div className="list-item-container" onClick={()=>onListItemClick()}>
                     <div className="item-cart-button">
                         <MatIconButton icon="add_shopping_cart" />
@@ -64,8 +77,8 @@ const ShowList: React.FC = () => {
                     </div>
                 </div>
 
-            </MatListItem>
-        </ClickNHold>
+            </ClickNHold>
+        </MatListItem>
     );
 
     return (
@@ -86,13 +99,13 @@ const ShowList: React.FC = () => {
         
         <fieldset>
             <div className="name">
-                <MatImput name="name" label="Item" value={selectedItem.name}/>
+                <MatImput name="name" label="Item" onChange={chageInputName.bind(this)} value={selectedItem.name}/>
             </div>
             <div className="amount">
-                <MatImput name="amount" label="qnt" value={selectedItem.amount.toString()}/>
+                <MatImput name="amount" label="qnt" onChange={chageInputAmount.bind(this)} value={selectedItem.amount.toString()}/>
             </div>
             <div className="price">
-                <MatImput name="price" label="preço" value={selectedItem.price.toString()}/>
+                <MatImput name="price" label="preço" onChange={chageInputPrice.bind(this)} value={selectedItem.price.toString()}/>
             </div>
         </fieldset>
         
