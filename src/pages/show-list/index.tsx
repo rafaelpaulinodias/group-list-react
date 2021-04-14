@@ -21,6 +21,10 @@ const ShowList: React.FC = () => {
     const [selectedItem, setSelectedItem] = useState(new Item());
 
     const [hasSelectedItem, setHasSelectedItem] = useState(false);
+
+    const [inputItemName, setInputItemName] = useState('');
+    const [inputItemAmount, setInputItemAmount] = useState('0');
+    const [inputItemPrice, setInputItemPrice] = useState('0');
     
     const [list, setList] = useState(newList);
 
@@ -41,14 +45,14 @@ const ShowList: React.FC = () => {
         setList(list);
     }
 
-    
+    const chageInputName = (event: React.ChangeEvent<HTMLInputElement>) => setInputItemName(event.target.value);
+    const chageInputAmount = (event: React.ChangeEvent<HTMLInputElement>) => setInputItemAmount(event.target.value);
+    const chageInputPrice = (event: React.ChangeEvent<HTMLInputElement>) => setInputItemPrice(event.target.value);
 
     const Items = list.items.map((item) => 
-        <ClickNHold time={1} onClickNHold={()=>onListItemClickAndHold(item)} >
-            <MatListItem
-                key={list.items.indexOf(item)}
-                select={hasSelectedItem && (selectedItem.name === item.name)}>
-                
+        
+        <MatListItem key={list.items.indexOf(item) + 1} select={hasSelectedItem && (selectedItem.name === item.name)}>
+            <ClickNHold  time={1} onClickNHold={()=>onListItemClickAndHold(item)} >
                 <div className="list-item-container" onClick={()=>onListItemClick()}>
                     <div className="item-cart-button">
                         <MatIconButton icon="add_shopping_cart" />
@@ -63,9 +67,9 @@ const ShowList: React.FC = () => {
                         <div className="item-total">Total: R$ {item.total}</div>
                     </div>
                 </div>
-
-            </MatListItem>
-        </ClickNHold>
+            </ClickNHold>
+        </MatListItem>
+        
     );
 
     return (
@@ -86,13 +90,13 @@ const ShowList: React.FC = () => {
         
         <fieldset>
             <div className="name">
-                <MatImput name="name" label="Item" value={selectedItem.name}/>
+                <MatImput name="name" label="Item" onChange={chageInputName.bind(this)} value={inputItemName}/>
             </div>
             <div className="amount">
-                <MatImput name="amount" label="qnt" value={selectedItem.amount.toString()}/>
+                <MatImput name="amount" label="qnt" onChange={chageInputAmount.bind(this)} value={inputItemAmount}/>
             </div>
             <div className="price">
-                <MatImput name="price" label="preço" value={selectedItem.price.toString()}/>
+                <MatImput name="price" label="preço" onChange={chageInputPrice.bind(this)} value={inputItemPrice}/>
             </div>
         </fieldset>
         
